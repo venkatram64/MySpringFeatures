@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    generate-unique-name: false
+    url:
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  security:
+    user:
+      name: venkat
+      password: password
+      roles: ADMIN

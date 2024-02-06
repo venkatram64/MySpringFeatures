@@ -1,0 +1,9 @@
+server:
+  port: 8090
+spring:
+  security:
+    user:
+      name: venkat
+      password: password
+      roles: ADMIN
+
