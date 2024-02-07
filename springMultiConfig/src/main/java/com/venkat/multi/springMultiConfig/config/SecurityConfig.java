@@ -12,7 +12,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {
+public class SecurityConfig {//multiple configurations
 
     @Bean
     @Order(1)
@@ -23,7 +23,7 @@ public class SecurityConfig {
                     auth.anyRequest().authenticated();
                 })
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .httpBasic(Customizer.withDefaults())
+                .httpBasic(Customizer.withDefaults())//built in login page is shown, login type is basic authentication
                 .build();
 
     }
@@ -51,7 +51,7 @@ public class SecurityConfig {
                     auth.requestMatchers("/error").permitAll();
                     auth.anyRequest().authenticated();
                 })
-                .formLogin(Customizer.withDefaults())
+                .formLogin(Customizer.withDefaults())//built in login page is shown, form login is the login page for authentication
                 .build();
     }
 }
