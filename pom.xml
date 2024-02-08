@@ -19,6 +19,7 @@
         <module>springDsl</module>
         <module>springMultiConfig</module>
         <module>springJdbc</module>
+        <module>my-bank</module>
     </modules>
 
 </project>
