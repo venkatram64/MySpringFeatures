@@ -10,16 +10,14 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-@Profile("prod")
-public class SecurityConfig {
+@Profile("test")
+public class SecurityLocalConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/api/notices","/api/contact").permitAll();
-                    auth.requestMatchers("/error").permitAll();
-                    auth.anyRequest().authenticated();
+                    auth.anyRequest().permitAll();
                 })
                 .formLogin(Customizer.withDefaults()) //built in login page is shown, form login is the login page for authentication
                 .httpBasic(Customizer.withDefaults()) //for postman

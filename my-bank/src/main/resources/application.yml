@@ -1,6 +1,8 @@
 spring:
   application:
     name: my-bank
+  profiles:
+    active: ${ACTIVE_ENV:prod}
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/mybankdb
     username: root
