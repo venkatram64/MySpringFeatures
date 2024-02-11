@@ -26,8 +26,3 @@ spring:
   output:
     ansi:
       enabled: always
-  security:
-    user:
-      name: venkat
-      password: password
-      roles: ADMIN
