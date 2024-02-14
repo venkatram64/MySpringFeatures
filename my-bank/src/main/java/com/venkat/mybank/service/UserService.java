@@ -2,6 +2,7 @@ package com.venkat.mybank.service;
 
 import com.venkat.mybank.model.User;
 import com.venkat.mybank.repository.UserRepository;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,11 +13,16 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    public UserService(UserRepository userRepository) {
+    private final PasswordEncoder encoder;
+
+    public UserService(UserRepository userRepository, PasswordEncoder encoder) {
         this.userRepository = userRepository;
+        this.encoder = encoder;
     }
 
     public User save(User user){
+        String encryptedPass = encoder.encode(user.getPassword());
+        user.setPassword(encryptedPass);
         return userRepository.save(user);
     }
 
