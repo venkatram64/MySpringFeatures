@@ -13,3 +13,7 @@ primary key (id)
 
 insert into users(first_name, last_name, email, password, role) 
 values('Venkatram','Veerareddy','venkat@venkat.com', 'venkat', 'admin')
+
+
+
+https://bcrypt-generator.com/

@@ -11,7 +11,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 @Profile("test")
-public class SecurityLocalConfig {
+public class SecurityLocalConfig { //no security, all rest end points can be accessible
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

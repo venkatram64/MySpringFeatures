@@ -9,6 +9,9 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsUtils;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebSecurity
@@ -18,9 +21,10 @@ public class SecurityConfig {
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
+                .csrf(csrf -> csrf.disable()) //this is important
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/api/notices","/api/contact").permitAll();
-                    auth.requestMatchers("/error").permitAll();
+                    auth.requestMatchers("/api/user/**","/api/notices","/api/contact").permitAll();
+                    auth.requestMatchers(CorsUtils::isPreFlightRequest).permitAll();
                     auth.anyRequest().authenticated();
                 })
                 .formLogin(Customizer.withDefaults()) //built in login page is shown, form login is the login page for authentication
@@ -32,5 +36,6 @@ public class SecurityConfig {
     public PasswordEncoder passwordEncoder(){
         return NoOpPasswordEncoder.getInstance();
     }
+
 
 }

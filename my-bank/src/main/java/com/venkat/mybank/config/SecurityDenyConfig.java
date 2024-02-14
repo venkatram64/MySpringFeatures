@@ -11,7 +11,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 @Profile("deny")
-public class SecurityDenyConfig {
+public class SecurityDenyConfig { //will deny everyone, noone can access any rest endpoint
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

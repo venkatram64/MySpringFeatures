@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/user")
+@RequestMapping("/api/user")
 public class UserController {
 
     private final UserService userService;
@@ -17,7 +17,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<User> findById(@PathVariable Integer id){
         return ResponseEntity.ok(userService.getUserById(id).get());
     }
@@ -27,17 +27,17 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<User> create(@RequestBody User user){
         return ResponseEntity.ok(userService.save(user));
     }
 
-    @PutMapping
+    @PutMapping("/update")
     public ResponseEntity<User> update(@RequestBody User user){
         return ResponseEntity.ok(userService.update(user));
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> delete(@PathVariable Integer id){
         userService.delete(id);
         return ResponseEntity.ok("User is deleted");
