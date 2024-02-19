@@ -20,6 +20,7 @@
         <module>springMultiConfig</module>
         <module>springJdbc</module>
         <module>my-bank</module>
+        <module>spring-multi-datasource</module>
     </modules>
 
 </project>
