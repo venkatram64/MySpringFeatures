@@ -1,7 +1,12 @@
 server:
   port: 8090
-
+springdoc:
+  api-docs.path: /multi-database-usage-docs #open api custom name
 spring:
+  jackson:
+    default-property-inclusion: non_null #if response field values are null, those will not be displayed
+  application:
+    name: spring-multi-datasource
   datasource:
     customer:
       jdbc-url: jdbc:mysql://localhost:3306/custdb

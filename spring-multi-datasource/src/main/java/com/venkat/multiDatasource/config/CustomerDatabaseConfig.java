@@ -65,9 +65,9 @@ public class CustomerDatabaseConfig {
         return new JpaTransactionManager(entityManagerFactory.getObject());
     }
 
-    @Primary
+    /*@Primary
     @Bean(name = "jdbcTemplate")
     public JdbcTemplate jdbcTemplate(@Qualifier("customerDataSource") DataSource dataSource){
         return new JdbcTemplate(dataSource);
-    }
+    }*/
 }
