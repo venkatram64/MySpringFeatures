@@ -30,4 +30,4 @@ spring:
       auto-offset-reset: earliest
 
 kafka:
-  topic: my-sb-emp-topic
+  topic: emp-topic
