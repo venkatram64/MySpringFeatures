@@ -1,0 +1,33 @@
+server:
+  port: 8090
+logging:
+  level:
+    com.venkat.ksb: INFO
+
+management:
+  endpoints:
+    web:
+      base-path: /manage
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: "ALWAYS"
+spring:
+  application:
+    name: kafkaProducerConsumer
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      retries: 3
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      client-id: my-producer-id
+    consumer:
+      group-id: my-sb-emp-id-1
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: earliest
+
+kafka:
+  topic: my-sb-emp-topic

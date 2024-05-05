@@ -21,6 +21,8 @@
         <module>springJdbc</module>
         <module>my-bank</module>
         <module>spring-multi-datasource</module>
+        <module>KafkaWithSpringBoot</module>
+        <module>KafkaWithPlainAPI</module>
     </modules>
 
 </project>
