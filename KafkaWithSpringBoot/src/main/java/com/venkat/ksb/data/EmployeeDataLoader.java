@@ -4,9 +4,11 @@ import com.github.javafaker.Faker;
 
 import com.venkat.ksb.model.Employee;
 import com.venkat.ksb.service.EmployeeProducer;
+import org.apache.kafka.clients.admin.NewTopic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -45,4 +47,9 @@ public class EmployeeDataLoader implements CommandLineRunner {
             }
         });
     }
+
+   /* @Bean
+    public NewTopic createTopic(){//which creates the new topic
+        return new NewTopic("emp-topic", 5, (short)1);
+    }*/
 }
