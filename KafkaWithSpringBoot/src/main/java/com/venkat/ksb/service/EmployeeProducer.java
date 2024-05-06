@@ -28,7 +28,8 @@ public class EmployeeProducer {
         CompletableFuture<SendResult<String, Employee>> future = template.send(this.topic, String.valueOf(l), employee);
         future.whenComplete((result, ex) ->{
             if(ex == null) {
-                log.info("Message {} with partition and offset {} is published", employee,
+                log.info("Message {}, published into topic: {} with partition {}, and offset {} ", employee,
+                        result.getRecordMetadata().topic(),
                         result.getRecordMetadata().partition(), result.getRecordMetadata().offset());
             }else{
                 log.error("Failed to publish due to {} ", ex.getMessage());
