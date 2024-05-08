@@ -1,3 +1,4 @@
+
 On windows:
 Step 1: start the zookeeper
 D:\Kafka_srijan\kafka>bin\windows\zookeeper-server-start.bat config\zookeeper.properties
@@ -24,14 +25,5 @@ start consumer:
 D:\Kafka_srijan\kafka>bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic emp-topic --from-beginning
 
 
-
-
 use postman to send the data in the following way, using post request
-http://localhost:8090/employee/newEmp
-
-{
-"firstName": "Srijan",
-"lastName": "Veerareddy",
-"designation": "Software engineer",
-"employeeNo": "AN-103"
-}
+http://localhost:8091/api/emp

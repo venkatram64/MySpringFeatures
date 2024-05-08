@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeeConsumerListener {
 
-    @KafkaListener(topics = "${kafka.topic}", groupId = "${spring.kafka.consumer.group-id}")
+    /*@KafkaListener(topics = "${kafka.topic}", groupId = "${spring.kafka.consumer.group-id}")
     public void listen(@Payload Employee employee){
         log.info("employee name " + employee.getFirstName());
         log.info("Message is consumed " + employee.toString());
-    }
+    }*/
 }
