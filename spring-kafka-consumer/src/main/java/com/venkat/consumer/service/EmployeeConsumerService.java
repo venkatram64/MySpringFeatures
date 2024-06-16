@@ -20,7 +20,7 @@ public class EmployeeConsumerService {
     }
 
     @KafkaListener(topics = "${kafka.topic}", groupId = "${spring.kafka.consumer.group-id}")
-    public void listen(EmployeeDto employeeDto){
+    public void listen(@Payload EmployeeDto employeeDto){
         log.info("Message is consuming...");
         log.info("employee name " + employeeDto.getFirstName());
         log.info("Message is consumed " + employeeDto.toString());

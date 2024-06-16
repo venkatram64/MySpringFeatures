@@ -3,6 +3,8 @@ CREATE SCHEMA `custdb` ;
 
 CREATE SCHEMA `userdb` ;
 
+CREATE SCHEMA `postdb` ;
+
 ctrl+alt + o  to remove unused imports for intellij idea
 
 open api/swagger is included

@@ -24,6 +24,7 @@
         <module>KafkaWithSpringBoot</module>
         <module>KafkaWithPlainAPI</module>
         <module>spring-kafka-consumer</module>
+        <module>xml-schema-gen</module>
     </modules>
 
 </project>

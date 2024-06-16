@@ -19,7 +19,7 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers(){
-        return ResponseEntity.ok(userService.getAllCustomers());
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 
     @GetMapping("/{id}")
@@ -35,12 +35,12 @@ public class UserController {
     }
 
     @PutMapping
-    public ResponseEntity<User> updateCustomer(@RequestBody User user){
+    public ResponseEntity<User> updateUser(@RequestBody User user){
         return ResponseEntity.ok(userService.update(user));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteCustomerById(@PathVariable Integer id){
+    public ResponseEntity<String> deleteUserById(@PathVariable Integer id){
         return ResponseEntity.ok(userService.deleteById(id));
     }
 }

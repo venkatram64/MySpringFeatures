@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employee xmlns="http://www.xml.venkat.com/employee"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.xml.venkat.com/employee schemas/xsd/employee.xsd">
+    <id>1</id>
+    <firstName>Venkatram</firstName>
+    <lastName>Veerareddy</lastName>
+    <department>IT</department>
+    <salary>40000.00</salary>
+</employee>

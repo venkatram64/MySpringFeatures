@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<employee>
+    <id>1</id>
+    <firstName>Venkatram</firstName>
+    <lastName>Veerareddy</lastName>
+    <department>IT</department>
+    <salary>50000.00</salary>
+</employee>
