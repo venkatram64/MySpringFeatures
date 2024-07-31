@@ -1,8 +1,7 @@
 package com.venkat.gneric.assignment.util;
 
 
-
-import com.venkat.auth.misc.gneric.assignment.model.Student;
+import com.venkat.gneric.assignment.model.Student;
 
 import java.util.ArrayList;
 import java.util.List;

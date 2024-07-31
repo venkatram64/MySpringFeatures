@@ -1,8 +1,9 @@
 package com.venkat.gneric.extra;
 
-import com.venkat.auth.misc.gneric.extra.model.LPAStudent;
-import com.venkat.auth.misc.gneric.extra.model.Student;
-import com.venkat.auth.misc.gneric.extra.util.QueryList;
+
+import com.venkat.gneric.extra.model.LPAStudent;
+import com.venkat.gneric.extra.model.Student;
+import com.venkat.gneric.extra.util.QueryList;
 
 import java.util.ArrayList;
 import java.util.List;

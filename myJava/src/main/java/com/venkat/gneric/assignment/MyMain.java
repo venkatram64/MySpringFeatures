@@ -1,8 +1,8 @@
 package com.venkat.gneric.assignment;
 
-import com.venkat.auth.misc.gneric.assignment.model.LPAStudent;
-import com.venkat.auth.misc.gneric.assignment.model.LPAStudentComparator;
-import com.venkat.auth.misc.gneric.assignment.util.QueryList;
+import com.venkat.gneric.assignment.model.LPAStudent;
+import com.venkat.gneric.assignment.model.LPAStudentComparator;
+import com.venkat.gneric.assignment.util.QueryList;
 
 import java.util.Comparator;
 import java.util.List;

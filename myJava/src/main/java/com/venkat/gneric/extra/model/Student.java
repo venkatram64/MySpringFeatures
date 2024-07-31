@@ -1,6 +1,7 @@
 package com.venkat.gneric.extra.model;
 
-import com.venkat.auth.misc.gneric.extra.util.QueryItem;
+
+import com.venkat.gneric.extra.util.QueryItem;
 
 import java.util.Random;
 
