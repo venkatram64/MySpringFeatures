@@ -1,4 +1,4 @@
-package com.venkat.alog.dll.astack;
+package com.venkat.alog.dll.q;
 
 public class MaxItemStackProblem {
 
