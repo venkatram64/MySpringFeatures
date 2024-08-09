@@ -12,6 +12,10 @@ public class Person implements Comparable<Person> {
         this.name = name;
     }
 
+    public Person(){
+
+    }
+
     public int getAge() {
         return age;
     }
