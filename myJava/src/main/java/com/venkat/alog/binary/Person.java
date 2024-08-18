@@ -1,6 +1,4 @@
-package com.venkat.alog.sll;
-
-import java.util.Comparator;
+package com.venkat.alog.binary;
 
 public class Person implements Comparable<Person> {
 
@@ -42,8 +40,6 @@ public class Person implements Comparable<Person> {
 
     @Override
     public int compareTo(Person o) {
-        //return Integer.compare(o.getAge(), age);
-        return Comparator.comparing(Person::getName)
-                .thenComparingInt(Person::getAge).compare(this, o);
+        return Integer.compare(o.getAge(), age);
     }
 }
