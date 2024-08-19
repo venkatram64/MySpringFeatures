@@ -1,5 +1,5 @@
 package com.venkat.subs;
-
+//O(N+M) linear memory complexity
 public class ZAlgorithm {
 
     private String text;

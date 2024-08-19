@@ -1,6 +1,6 @@
 package com.venkat.subs;
 /*
-Rabin finger print equation
+Rabin fingerprint equation
 f(x) = m0 + m1x +....+ m(n-1)x^n-1
 average case running time complexity O(M+N)
 worst time case is O(MN)
@@ -50,7 +50,8 @@ public class RabinKarp {
                 }
             }
             //update the hash for the actual substring of the text(venkatram)
-            if(i < textLength - patternLength){//rolling hashing -> h(ven) = h(ven) - h(v) + h(k)
+            //rolling hashing -> h(ven) = h(ven) - h(v) + h(k)
+            if(i < textLength - patternLength){
                 hashText = ((hashText - text.charAt(i) * h) * d + text.charAt(i + patternLength)) % q;
                 //we may get -ve values
                 if(hashText < 0){

@@ -1,6 +1,6 @@
 package com.venkat.subs;
 /*
-running time complexity O(MN)
+running time complexity O(NM)
  */
 public class BruteForceSearch {
 

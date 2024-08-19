@@ -1,5 +1,7 @@
 package com.venkat.subs;
-
+/*
+running time complexity O(N+M)
+ */
 public class KnuthMorrisPrattAlgorithm {
 
     private String text;
