@@ -68,6 +68,7 @@ public class LinkedList {
         head = head.next;
         temp.next = null;
         length--;
+        //if only one node exists
         if(length == 0){
             tail = null;
         }
@@ -110,10 +111,12 @@ public class LinkedList {
         if(index < 0 || index > length){
             return false;
         }
+        //adding at front
         if(index == 0){
             prepend(value);
             return true;
         }
+        //adding at end
         if(index == length){
             append(value);
             return true;
@@ -130,9 +133,11 @@ public class LinkedList {
         if(index < 0 || index > length){
             return null;
         }
+        //removing at first
         if(index == 0){
             return removeFirst();
         }
+        //removing at last
         if(index == length - 1){
             return removeLast();
         }
