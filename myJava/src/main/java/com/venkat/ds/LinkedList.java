@@ -50,8 +50,8 @@ public class LinkedList {
             temp = temp.next;
         }
         tail = prev;
-        tail.next = null;
-        length--;
+        tail.next = null;//detaches the last node
+        length--;//decrement the size
         //if only one node exists
         if(length == 0){
             head = null;
@@ -66,8 +66,8 @@ public class LinkedList {
         }
         Node temp = head;
         head = head.next;
-        temp.next = null;
-        length--;
+        temp.next = null;//detaches the last node
+        length--;//decrement the size
         //if only one node exists
         if(length == 0){
             tail = null;
@@ -142,9 +142,9 @@ public class LinkedList {
             return removeLast();
         }
         Node prev = get(index - 1);
-        Node temp = prev.next;
+        Node temp = prev.next;//this node should be deleted
         prev.next = temp.next;
-        temp.next = null;
+        temp.next = null; //de link
         length--;
         return temp;
     }
@@ -155,7 +155,9 @@ public class LinkedList {
         head = tail;
         tail = temp;
 
+        //after temp
         Node after = temp.next;
+        //before temp
         Node before = null;
         for(int i = 0; i < length; i++){
             after = temp.next;
@@ -216,6 +218,10 @@ public class LinkedList {
 
         System.out.println("--------------remove-----------");
         System.out.println(ll.remove(2));
+        ll.print();
+
+        System.out.println("--------------reverse-----------");
+        ll.reverse();
         ll.print();
     }
 }
