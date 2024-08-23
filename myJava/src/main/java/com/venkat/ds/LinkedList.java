@@ -36,6 +36,7 @@ public class LinkedList {
             tail = newNode;
         }
         length++;
+
     }
 
     public Node removeLast(){
