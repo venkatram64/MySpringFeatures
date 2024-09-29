@@ -27,6 +27,7 @@
         <module>xml-schema-gen</module>
         <module>java-parallel</module>
         <module>myJava</module>
+        <module>social-security</module>
     </modules>
 
 </project>
