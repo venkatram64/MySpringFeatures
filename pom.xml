@@ -28,6 +28,8 @@
         <module>java-parallel</module>
         <module>myJava</module>
         <module>social-security</module>
+        <module>albums-api-rs</module>
+        <module>albums-with-rc-oauth2</module>
     </modules>
 
 </project>
