@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  activemq:
+    image: apache/activemq-classic:latest
+    container_name: activemq
+    restart: unless-stopped
+    ports:
+      - "8161:8161"         # Web Console
+      - "61616:61616"       # OpenWire
+      - "5672:5672"         # AMQP
+      - "1883:1883"         # MQTT
+      - "61613:61613"      # STOMP
+    #volumes:
+      #- ./data:/opt/activemq/data
+      #- ./conf:/opt/activemq/conf
+    environment:
+      - ACTIVEMQ_ADMIN=admin
+      - ACTIVEMQ_ADMIN_PASSWORD=admin
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8161/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    networks:
+      - activemq-net
+
+networks:
+  activemq-net:
+    driver: bridge
