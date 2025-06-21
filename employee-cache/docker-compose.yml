@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  employee-mysql:
+    image: mysql:8.0
+    container_name: employee-mysql
+    hostname: employee-mysql  # Explicitly set hostname
+    environment:
+      #MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: employee_db
+      #MYSQL_USER: root
+      #MYSQL_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./src/main/resources/data/employee.sql:/docker-entrypoint-initdb.d/employee.sql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 30s
+      retries: 10
+      interval: 10s
+      start_period: 90s  # Give MySQL more time for initial setup
+
+
+#  employee-service:
+#    build: .
+#    container_name: employee-service
+#    ports:
+#      - "8082:8082"
+#    environment:
+#      SPRING_APPLICATION_NAME: employee-service
+#      SPRING_DATASOURCE_URL: jdbc:mysql://employee-mysql:3306/employee_db
+#      SPRING_DATASOURCE_USERNAME: root
+#      SPRING_DATASOURCE_PASSWORD: root
+#      SPRING_DATASOURCE_DRIVER-CLASS-NAME: com.mysql.cj.jdbc.Driver
+#      # JPA/Hibernate settings
+#      SPRING_JPA_SHOW_SQL: true
+#      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQLDialect
+#      SPRING_JPA_HIBERNATE_DDL_AUTO: none
+#    depends_on:
+#      employee-mysql:
+#        condition: service_healthy
+
+

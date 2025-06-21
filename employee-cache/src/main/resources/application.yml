@@ -1,0 +1,30 @@
+server:
+    port: 8081
+
+spring:
+  application:
+    name: employee-cache
+
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3307/employee_db
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari: #database connection pool configuration
+      connection-timeout: 15000
+      minimum-idle: 2
+      maximum-pool-size: 5
+      idle-timeout: 10000
+      max-lifetime: 50000
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  output:
+    ansi:
+      enabled: always

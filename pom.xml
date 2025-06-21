@@ -32,6 +32,7 @@
         <module>albums-with-rc-oauth2</module>
         <module>my-apache-camel-ms-1</module>
         <module>my-apache-camel-ms-2</module>
+        <module>employee-cache</module>
     </modules>
 
 </project>
