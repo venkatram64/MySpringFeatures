@@ -3,8 +3,10 @@ package com.venkat.employee.controller;
 
 import com.venkat.employee.dto.EmployeeDto;
 import com.venkat.employee.exception.EmployeeNotFoundException;
+import com.venkat.employee.service.CacheInspectionService;
 import com.venkat.employee.service.EmployeeService;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +17,10 @@ import java.util.List;
 public class EmployeeController {
 
     private final EmployeeService employeeService;
+
+    // for checking cache in memory
+    @Autowired
+    private CacheInspectionService cacheService;
 
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
@@ -27,6 +33,7 @@ public class EmployeeController {
 
     @GetMapping("/{email}")
     public ResponseEntity<EmployeeDto>  getEmployee(@PathVariable String email) throws EmployeeNotFoundException {
+        cacheService.displayCache();
         EmployeeDto emp = this.employeeService.findByEmail(email);
         return ResponseEntity.ok(emp);
     }
@@ -38,12 +45,13 @@ public class EmployeeController {
 
     @PutMapping
     public ResponseEntity<EmployeeDto>  updateEmployee(@RequestBody EmployeeDto employeeDto) {
-        return ResponseEntity.ok(this.employeeService.save(employeeDto));
+        EmployeeDto updatedEmp = this.employeeService.update(employeeDto);
+        return ResponseEntity.ok(updatedEmp);
     }
 
     @DeleteMapping("/{email}")
-    public ResponseEntity<Void>  deleteEmployee(String email) throws EmployeeNotFoundException {
-        this.employeeService.findByEmail(email);
+    public ResponseEntity<Void>  deleteEmployee(@PathVariable String email) throws EmployeeNotFoundException {
+        this.employeeService.deleteByEmail(email);
         return ResponseEntity.ok().build();
     }
 
