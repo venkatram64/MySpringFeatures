@@ -27,6 +27,7 @@ public class EmployeeConsumerService {
         //further processing to save the record in database
         log.info("Message is inserting into database..");
         Employee emp = EmployeeMapper.mapToEmployee(employeeDto);
+
         this.employeeService.save(emp);
     }
 }
